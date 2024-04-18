@@ -4,7 +4,6 @@ from django.urls import path
 from Etsy.views.customer import *
 
 urlpatterns = [
-    path('', view_dtl, name='dtl'),
     path("users/all/", CustomUserList.as_view(), name="user_list"),
     path("users/", CustomUserCreate.as_view(), name="create_user"),
     # path('login/', CustomerLoginView.as_view(), name="login"),  #

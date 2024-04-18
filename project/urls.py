@@ -43,6 +43,7 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('dummy', view_dtl, name='dtl'),
     
     path('swagger/',SpectacularSwaggerView.as_view(url_name="schema"),name="swagger",),  #latest swagger vesion of truboard
     # path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  #old swagger
