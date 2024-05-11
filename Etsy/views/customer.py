@@ -229,3 +229,18 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             "data": user_data
         }
         return Response(response_data)
+  
+  
+from django.contrib.auth import authenticate, login, logout  
+    
+class LogoutView(APIView):
+    def post(self, request):
+        # Optionally, you can perform additional logout logic here
+        user = request.user
+        if user.is_authenticated:
+            user.fcm_token = None  # Assuming you have a field named fcm_token in your CustomUser model
+            user.save()
+            logout(request)
+            return Response({'status': True,'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
+        else:
+            return Response({'status': False, 'message': 'User is not authenticated.'}, status=status.HTTP_401_UNAUTHORIZED)

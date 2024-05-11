@@ -51,6 +51,7 @@ urlpatterns = [
     # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('schema/', SpectacularAPIView.as_view(), name="schema"),
     path('token/refresh/', TokenRefreshView.as_view(), name="token_refresh"),
+    path('logout/', LogoutView.as_view(), name='logout'),
 
     
     path("", include('Etsy.all_urls.customer')),
