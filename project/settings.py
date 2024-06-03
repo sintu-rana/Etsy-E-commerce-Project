@@ -176,7 +176,6 @@ SPECTACULAR_SETTINGS = {
     "SWAGGER_UI_SETTINGS": {
         "docExpansion": "none",
         "deepLinking": True,
-        # 'filter': True
     },
     "DISABLE_ERRORS_AND_WARNINGS": True,
     "COMPONENT_SPLIT_REQUEST": True,
